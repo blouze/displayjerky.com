@@ -1,52 +1,37 @@
 <template>
   <section class="section">
     <div class="columns is-mobile">
-      <card
-        title="Free"
-        icon="github"
-      >
-        Open source on <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
-      </card>
-
-      <card
-        title="Responsive"
-        icon="cellphone-link"
-      >
-        <b class="has-text-grey">
-          Every
-        </b> component is responsive
-      </card>
-
-      <card
-        title="Modern"
-        icon="alert-decagram"
-      >
-        Built with <a href="https://vuejs.org/">
-          Vue.js
-        </a> and <a href="http://bulma.io/">
-          Bulma
-        </a>
-      </card>
-
-      <card
-        title="Lightweight"
-        icon="arrange-bring-to-front"
-      >
-        No other internal dependency
-      </card>
+      <VueMailchimpEmailSignupForm v-bind="form" />
     </div>
   </section>
 </template>
 
 <script>
-import Card from '~/components/Card'
+import { VueMailchimpEmailSignupForm } from 'vue-mailchimp-email-signup-form'
+import 'vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css'
 
 export default {
   name: 'IndexPage',
-  components: {
-    Card
+  components: { VueMailchimpEmailSignupForm },
+
+  data () {
+    return {
+      form: {
+        url: 'https://displayjerky.us17.list-manage.com/subscribe/post?u=ed56fe7bc3a089b12e7b5622b&id=ec155a6c0c',
+        elementId: 'signup_form',
+        title: 'Sign up to receive updates!'
+      }
+    }
   }
 }
 </script>
+
+<style scoped>
+.subscribe-container {
+  font-family: unset
+}
+
+.subscribe-container__submit {
+
+}
+</style>

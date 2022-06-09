@@ -1,21 +1,14 @@
 <template>
   <div>
     <nav
-      class="navbar header has-shadow is-primary"
+      class="navbar header has-shadow is-dark"
       role="navigation"
       aria-label="main navigation"
     >
       <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
+        <nuxt-link to="/" class="navbar-item">
+          DisplayJerky
+        </nuxt-link>
 
         <div class="navbar-burger">
           <span />
@@ -26,26 +19,20 @@
     </nav>
 
     <section class="main-content columns">
-      <aside class="column is-2 section">
+      <!-- <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">
           General
         </p>
         <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <NuxtLink
-              :to="item.to"
-              exact-active-class="is-active"
-            >
+          <li v-for="(item, key) of items" :key="key">
+            <NuxtLink :to="item.to" exact-active-class="is-active">
               <b-icon :icon="item.icon" /> {{ item.title }}
             </NuxtLink>
           </li>
         </ul>
-      </aside>
+      </aside> -->
 
-      <div class="container column is-10">
+      <div class="container column is-12">
         <Nuxt />
       </div>
     </section>
