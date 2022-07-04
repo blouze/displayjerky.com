@@ -1,22 +1,6 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-dark"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <nuxt-link to="/" class="navbar-item">
-          DisplayJerky
-        </nuxt-link>
-
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
+    <nav-bar />
 
     <section class="main-content columns">
       <!-- <aside class="column is-2 section">
@@ -40,8 +24,11 @@
 </template>
 
 <script>
+import NavBar from '../components/NavBar.vue'
+
 export default {
   name: 'DefaultLayout',
+  components: { NavBar },
   data () {
     return {
       items: [

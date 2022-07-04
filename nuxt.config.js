@@ -39,7 +39,9 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://google-fonts.nuxtjs.org/
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    // https://github.com/nuxt-community/fontawesome-module
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -63,14 +65,27 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.glsl$/,
+        loader: 'webpack-glsl-loader'
+      })
+    }
   },
 
   // https://google-fonts.nuxtjs.org/options
   googleFonts: {
     families: {
-      Staatliches: true,
-      Cabin: true
+      Cabin: true,
+      Archivo: true
     },
     display: 'swap'
+  },
+
+  // https://github.com/nuxt-community/fontawesome-module
+  fontawesome: {
+    icons: {
+      brands: ['faTwitter', 'faInstagram', 'faItchIo']
+    }
   }
 }

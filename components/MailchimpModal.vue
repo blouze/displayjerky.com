@@ -1,0 +1,59 @@
+<template>
+  <b-modal
+    v-model="isModalActive"
+    trap-focus
+    aria-role="dialog"
+    aria-label="Subscribe Modal"
+    close-button-aria-label="Close"
+    aria-modal
+  >
+    <VueMailchimpEmailSignupForm v-bind="form" />
+  </b-modal>
+</template>
+
+<script>
+import { VueMailchimpEmailSignupForm } from 'vue-mailchimp-email-signup-form'
+import 'vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css'
+
+export default {
+  name: 'MailchimpModal',
+  components: { VueMailchimpEmailSignupForm },
+
+  data () {
+    return {
+      form: {
+        url: 'https://displayjerky.us17.list-manage.com/subscribe/post?u=ed56fe7bc3a089b12e7b5622b&id=ec155a6c0c',
+        elementId: 'signup_form',
+        title: 'Close this annoying popup and miss out on all the updates!'
+      },
+
+      isModalActive: true
+    }
+  }
+}
+</script>
+
+<style>
+.modal .modal-content {
+  width: unset;
+}
+
+.subscribe-container {
+  font-family: unset;
+}
+
+.subscribe-container__title {
+  color: dimgrey;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.subscribe-container__submit {
+  background-color: dimgrey;
+}
+
+.subscribe-container__submit:hover {
+  background-color: black;
+}
+</style>
