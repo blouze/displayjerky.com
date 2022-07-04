@@ -1,3 +1,5 @@
+@import '@fortawesome/fontawesome-svg-core/styles.css';
+
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
@@ -73,7 +75,7 @@ $colors: mergeColorMaps(
 );
 
 // Scheme
-$scheme-main: $black;
+$scheme-main: $black-ter;
 $scheme-invert: $light;
 
 // Links
