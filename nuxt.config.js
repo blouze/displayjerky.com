@@ -41,7 +41,9 @@ export default {
     // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
     // https://github.com/nuxt-community/fontawesome-module
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    // https://google-analytics.nuxtjs.org/
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -86,6 +88,12 @@ export default {
   fontawesome: {
     icons: {
       brands: ['faTwitter', 'faInstagram', 'faItchIo']
+    }
+  },
+
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID
     }
   }
 }
