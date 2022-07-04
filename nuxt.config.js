@@ -24,12 +24,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/scss/main.scss'
+    '@/assets/scss/main.scss',
+    '@/assets/scss/custom.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: ['@/plugins/gtag'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,9 +41,7 @@ export default {
     // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
     // https://github.com/nuxt-community/fontawesome-module
-    '@nuxtjs/fontawesome',
-    // https://google-analytics.nuxtjs.org/
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,7 +51,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    // https://gitlab.com/broj42/nuxt-cookie-control
+    ['nuxt-cookie-control', { controlButton: false }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -91,9 +91,50 @@ export default {
     }
   },
 
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_ID
+  // https://gitlab.com/broj42/nuxt-cookie-control
+  cookies: {
+    necessary: [
+      {
+        name: {
+          en: 'Default Cookies'
+        },
+        description: {
+          en: 'Used for cookie control.'
+        },
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+      }
+    ],
+    optional: [
+      {
+        name: 'Google Analitycs',
+        // if you don't set identifier, slugified name will be used
+        identifier: 'ga',
+        description: {
+          en: 'Google GTM is ...'
+        },
+
+        initialState: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-LD498CBMDN',
+        async: true,
+        cookies: ['_ga', '_gat', '_gid'],
+        accepted: () => {
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          })
+        },
+        declined: () => {
+        }
+      }
+    ]
+  },
+
+  env: {
+    social: {
+      twitter: { icon: ['fab', 'twitter'], url: 'https://twitter.com/DisplayJerky/' },
+      instagram: { icon: ['fab', 'instagram'], url: 'https://www.instagram.com/display_jerky/' },
+      'itch.io': { icon: ['fab', 'itch-io'], url: 'https://displayjerky.itch.io/' }
     }
   }
 }

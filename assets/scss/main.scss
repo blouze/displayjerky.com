@@ -72,6 +72,10 @@ $colors: mergeColorMaps(
     $custom-colors
 );
 
+// Scheme
+$scheme-main: $black;
+$scheme-invert: $light;
+
 // Links
 $link: $primary;
 $link-invert: $primary-invert;

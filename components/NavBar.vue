@@ -1,60 +1,59 @@
 <template>
-  <div class="container">
-    <b-navbar>
-      <template #brand>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
-          DisplayJerky
-        </b-navbar-item>
-      </template>
+  <b-navbar spaced fixed-top type="is-dark" wrapper-class="container is-max-desktop">
+    <template #brand>
+      <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
+        DisplayJerky
+      </b-navbar-item>
+    </template>
 
-      <template #start>
-        <b-navbar-item tag="a" :href="social.twitter">
-          <font-awesome-icon :icon="['fab', 'twitter']" />
-        </b-navbar-item>
+    <template #start />
 
-        <b-navbar-item tag="a" :href="social.instagram">
-          <font-awesome-icon :icon="['fab', 'instagram']" />
-        </b-navbar-item>
+    <template #end>
+      <b-navbar-item
+        v-for="(link, key) in links"
+        :key="key"
+        tag="nuxt-link"
+        :to="{ path: '/games' }"
+      >
+        {{ key }}
+      </b-navbar-item>
 
-        <b-navbar-item tag="a" :href="social['itch.io']">
-          <font-awesome-icon :icon="['fab', 'itch-io']" />
-        </b-navbar-item>
-      </template>
+      <b-navbar-item
+        v-for="(link, key) in social"
+        :key="key"
+        tag="a"
+        :href="link.url"
+      >
+        <span>
+          <font-awesome-icon :icon="link.icon" />
+        </span>
+      </b-navbar-item>
+    </template>
 
-      <template #end>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/games' }">
-          games
-        </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/about' }">
-          about
-        </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/blog' }">
-          blog
-        </b-navbar-item>
-      </template>
-
-      <div class="navbar-burger">
-        <span />
-        <span />
-        <span />
-      </div>
-    </b-navbar>
-  </div>
+    <div class="navbar-burger">
+      <span />
+      <span />
+      <span />
+    </div>
+  </b-navbar>
 </template>
 
 <script>
 export default {
   name: 'NavBar',
   data: () => ({
-    social: {
-      twitter: 'https://twitter.com/DisplayJerky/',
-      instagram: 'https://www.instagram.com/display_jerky/',
-      'itch.io': 'https://displayjerky.itch.io/'
+    social: process.env.social,
+    links: {
+      games: '/games',
+      blog: '/blog',
+      about: '/about'
     }
   })
 }
 </script>
 
 <style>
-
+nav.navbar.is-fixed-top {
+  background: transparent;
+}
 </style>

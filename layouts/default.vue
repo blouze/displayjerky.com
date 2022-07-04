@@ -2,48 +2,39 @@
   <div>
     <nav-bar />
 
-    <section class="main-content columns">
-      <!-- <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li v-for="(item, key) of items" :key="key">
-            <NuxtLink :to="item.to" exact-active-class="is-active">
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </aside> -->
+    <hero-fullheight v-if="$route.name === 'index'" />
 
-      <div class="container column is-12">
+    <section class="columns" :class="{ main: $route.name !== 'index' }">
+      <div class="main-content container column is-8">
         <Nuxt />
       </div>
     </section>
+
+    <footer-section>
+      <CookieControl />
+    </footer-section>
   </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar.vue'
+import FooterSection from '../components/FooterSection.vue'
+import HeroFullheight from '../components/HeroFullheight.vue'
 
 export default {
   name: 'DefaultLayout',
-  components: { NavBar },
-  data () {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
-  }
+  components: { NavBar, FooterSection, HeroFullheight }
 }
 </script>
+
+<style>
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+</style>
