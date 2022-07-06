@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="buttons">
-      <a v-for="(link, key) in links" :key="key" class="button is-dark" :href="link.url">
+      <a v-for="(link, key) in links" :key="key" class="button is-dark is-large" :href="link.url">
         <span>
-          <font-awesome-icon :icon="link.icon" size="xl" />
+          <font-awesome-icon :icon="link.icon" size="lg" />
         </span>
       </a>
     </div>
@@ -18,3 +18,9 @@ export default {
   })
 }
 </script>
+
+<style lang="scss" scoped>
+.buttons {
+  display: unset;
+}
+</style>

@@ -1,5 +1,8 @@
 <template>
-  <section class="section">
+  <section class="section container is-max-desktop">
+    <h2 class="title is-2">
+      {{ page.title }}
+    </h2>
     <nuxt-content :document="page" />
   </section>
 </template>

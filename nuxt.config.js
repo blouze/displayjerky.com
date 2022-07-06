@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'displayjerky.com',
+    title: 'DisplayJerky',
     htmlAttrs: {
       lang: 'en'
     },
@@ -53,7 +53,9 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://gitlab.com/broj42/nuxt-cookie-control
-    ['nuxt-cookie-control', { controlButton: false }]
+    ['nuxt-cookie-control', { controlButton: true }],
+    // https://github.com/nicolasbeauvais/vue-social-sharing
+    'vue-social-sharing/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -131,6 +133,7 @@ export default {
   },
 
   env: {
+    HOST_NAME: 'https://displayjerky.com',
     social: {
       twitter: { icon: ['fab', 'twitter'], url: 'https://twitter.com/DisplayJerky/' },
       instagram: { icon: ['fab', 'instagram'], url: 'https://www.instagram.com/display_jerky/' },

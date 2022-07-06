@@ -1,8 +1,10 @@
 ---
 title: About
-description: 'About DisplayJerky...'
+description: 'A few word about DisplayJerky.'
 ---
 
-## Mission
+### Mission
 
-Our goal is to provide IRD (impactful retina disruption) through interactive experience. We make games.
+Our goal is to provide **IRD** (*impactful retina disruption*) through interactive experience.
+
+We make ***games***.
