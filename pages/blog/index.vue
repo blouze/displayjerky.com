@@ -31,7 +31,9 @@
             </div>
 
             <div class="content">
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              <time datetime="2016-1-1">
+                {{ formatDate(article.updatedAt) }}
+              </time>
             </div>
           </div>
         </nuxt-link>
@@ -42,12 +44,13 @@
 
 <script>
 import { createSEOMeta } from '@/utils/seo'
+import { formatDate } from '@/utils/date'
 
 export default {
   name: 'BlogPage',
   async asyncData ({ $content, params }) {
     const articles = await $content('blog')
-      .only(['title', 'description', 'img', 'slug', 'author'])
+      .only(['title', 'description', 'img', 'slug', 'author', 'updatedAt'])
       .sortBy('createdAt', 'asc')
       .fetch()
     return { articles }
@@ -60,6 +63,9 @@ export default {
         url: this.$route.fullPath
       })]
     }
+  },
+  methods: {
+    formatDate
   }
 }
 </script>

@@ -1,6 +1,7 @@
 ---
-title: I won a game jam and told nobody.
+title: I won a game jam and told nobody about it.
 description: I don't know why I'm like this...
+img: /img/blog/cat.jpeg
 ---
 
 I started fiddling again with a game engine a couple years ago, out of boredom (or was it confinement?). For a while, it felt pretty much like old William Munny shooting at empty bottles.

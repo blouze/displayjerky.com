@@ -3,9 +3,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-align-items-start">
         <ul class="column level is-mobile">
-          <li v-for="(link, key) in links" :key="key" class="level-item">
+          <li v-for="(link, key) in links" :key="key" class="level-item has-text-centered">
             <router-link
-              class="button is-text title is-4"
+              class="button is-text"
               :class="{'is-active': $route.path === link.to}"
               :to="link.to"
             >
