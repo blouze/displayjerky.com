@@ -1,5 +1,5 @@
 ---
-title: I won a game jam and told nobody about it.
+title: I won a game jam and told nobody.
 description: I don't know why I'm like this...
 ---
 

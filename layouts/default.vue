@@ -10,9 +10,9 @@
       </div>
     </div>
 
-    <footer-section>
-      <CookieControl />
-    </footer-section>
+    <footer-section />
+
+    <CookieControl />
   </div>
 </template>
 

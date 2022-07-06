@@ -26,8 +26,9 @@
         </p>
       </h1>
 
-      <ShareNetwork network="twitter" :url="$route.fullPath" :title="article.title">
-        Share
+      <ShareNetwork v-bind="share" class="button">
+        <span><font-awesome-icon :icon="['fab', 'twitter']" /></span>
+        <span>Share</span>
       </ShareNetwork>
 
       <nuxt-content :document="article" />
@@ -44,10 +45,24 @@ export default {
     return { article }
   },
   head () {
-    const { title, description, img: image } = this.article
     return {
-      titleTemplate: title => `${title} - ${this.article.title}`,
-      meta: [...createSEOMeta({ title, description, url: this.$route.fullPath, image })]
+      titleTemplate: title => `${this.article.title} - ${title}`,
+      meta: [...createSEOMeta({
+        title: this.article.title,
+        description: this.article.description,
+        url: this.$route.path,
+        image: this.article.img
+      })]
+    }
+  },
+  computed: {
+    share () {
+      return {
+        network: 'twitter',
+        url: `${process.env.HOST_NAME}${this.$route.path}`,
+        title: this.article.title,
+        description: this.article.description
+      }
     }
   },
   methods: {

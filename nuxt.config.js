@@ -59,7 +59,7 @@ export default {
     // https://github.com/nuxt-community/robots-module
     '@nuxtjs/robots',
     // https://gitlab.com/broj42/nuxt-cookie-control
-    ['nuxt-cookie-control', { controlButton: true }],
+    ['nuxt-cookie-control'],
     // https://github.com/nicolasbeauvais/vue-social-sharing
     'vue-social-sharing/nuxt'
   ],
@@ -86,7 +86,6 @@ export default {
   // https://google-fonts.nuxtjs.org/options
   googleFonts: {
     families: {
-      Cabin: true,
       Archivo: true
     },
     display: 'swap'
@@ -136,6 +135,17 @@ export default {
         }
       }
     ]
+  },
+
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true })
+        .where({ extension: { $eq: '.md' } })
+        .only(['path']).fetch()
+
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   },
 
   sitemap: {

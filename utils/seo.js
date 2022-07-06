@@ -30,9 +30,19 @@ export const createSEOMeta = data => [
     content: `${process.env.HOST_NAME}${data.url}`
   },
   {
+    hid: 'twitter:site',
+    property: 'twitter:site',
+    content: '@DisplayJerky'
+  },
+  {
     hid: 'twitter:title',
     property: 'twitter:title',
     content: data.title
+  },
+  {
+    hid: 'twitter:description',
+    property: 'twitter:description',
+    content: data.description
   },
   {
     hid: 'twitter:image',
