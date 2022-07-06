@@ -33,7 +33,7 @@ export default {
       titleTemplate: (title) => {
         return this.$route.name === 'index' ? `${title}` : `${title} - ${this.$route.name}`
       },
-      meta: [...createSEOMeta({})],
+      meta: [...createSEOMeta({ url: this.$route.fullPath })],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   }

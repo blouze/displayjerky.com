@@ -40,16 +40,14 @@ import { createSEOMeta } from '@/utils/seo'
 
 export default {
   async asyncData ({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
+    const article = await $content('blog', params.slug).fetch()
     return { article }
   },
   head () {
-    const { title, description } = this.article
-    const url = this.$route.fullPath
+    const { title, description, img: image } = this.article
     return {
       titleTemplate: title => `${title} - ${this.article.title}`,
-      meta: [...createSEOMeta({ title, description, url })]
-
+      meta: [...createSEOMeta({ title, description, url: this.$route.fullPath, image })]
     }
   },
   methods: {

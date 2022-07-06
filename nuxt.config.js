@@ -1,3 +1,5 @@
+import getRoutes from './utils/getRoutes'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -52,6 +54,10 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://sitemap.nuxtjs.org/
+    '@nuxtjs/sitemap',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
     // https://gitlab.com/broj42/nuxt-cookie-control
     ['nuxt-cookie-control', { controlButton: true }],
     // https://github.com/nicolasbeauvais/vue-social-sharing
@@ -130,6 +136,22 @@ export default {
         }
       }
     ]
+  },
+
+  sitemap: {
+    hostname: 'https://displayjerky.com',
+    filter ({ routes }) {
+      return routes.filter(route => !route.url.split('/').some(el => ['tsu-chi-tsu'].includes(el)))
+    },
+    routes () {
+      return getRoutes()
+    }
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: '/tsu-chi-tsu/',
+    Sitemap: 'https://displayjerky.com/sitemap.xml'
   },
 
   env: {

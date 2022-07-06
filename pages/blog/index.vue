@@ -1,7 +1,7 @@
 <template>
   <section class="section container is-max-desktop">
     <h1 class="title is-1">
-      Blog Posts
+      Blog
     </h1>
 
     <ul class="columns is-multiline">
@@ -41,14 +41,25 @@
 </template>
 
 <script>
+import { createSEOMeta } from '@/utils/seo'
+
 export default {
   name: 'BlogPage',
   async asyncData ({ $content, params }) {
-    const articles = await $content('articles')
+    const articles = await $content('blog')
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'asc')
       .fetch()
     return { articles }
+  },
+  head () {
+    return {
+      meta: [...createSEOMeta({
+        title: 'Blog',
+        description: 'Blog posts by DisplayJerky.',
+        url: this.$route.fullPath
+      })]
+    }
   }
 }
 </script>

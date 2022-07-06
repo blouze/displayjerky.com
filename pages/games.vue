@@ -8,12 +8,23 @@
 </template>
 
 <script>
+import { createSEOMeta } from '@/utils/seo'
+
 export default {
   name: 'GamesPage',
   async asyncData ({ $content }) {
     const page = await $content('games').fetch()
     return {
       page
+    }
+  },
+  head () {
+    return {
+      meta: [...createSEOMeta({
+        title: 'Games',
+        description: 'Games by DisplayJerky.',
+        url: this.$route.fullPath
+      })]
     }
   }
 }
