@@ -22,7 +22,7 @@ export const createSEOMeta = data => [
   {
     hid: 'og:image',
     property: 'og:image',
-    content: data.image || `${process.env.HOST_NAME}/logo.png`
+    content: `${process.env.HOST_NAME}${data.image || '/logo.png'}`
   },
   {
     hid: 'og:url',
@@ -47,7 +47,7 @@ export const createSEOMeta = data => [
   {
     hid: 'twitter:image',
     property: 'twitter:image',
-    content: data.image || `${process.env.HOST_NAME}/logo.png`
+    content: `${process.env.HOST_NAME}${data.image || '/logo.png'}`
   },
   {
     hid: 'twitter:card',
