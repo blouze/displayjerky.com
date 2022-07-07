@@ -18,9 +18,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'title', name: 'title', content: 'DisplayJerky' },
+      { hid: 'description', name: 'description', content: 'DisplayJerky' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    bodyAttrs: {
+      class: 'has-navbar-fixed-top'
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]

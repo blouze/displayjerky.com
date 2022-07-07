@@ -1,10 +1,5 @@
 <template>
-  <b-navbar
-    fixed-top
-    :type="type"
-    :class="{home: $route.name === 'index'}"
-    wrapper-class="container is-max-desktop"
-  >
+  <b-navbar fixed-top :type="type" :class="{ home: $route.name === 'index' }" wrapper-class="container is-max-desktop">
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         DisplayJerky
@@ -19,17 +14,12 @@
         :key="key"
         tag="router-link"
         :to="link.to"
-        :class="{'is-active': $route.path === link.to}"
+        :class="{ 'is-active': $route.path === link.to }"
       >
         {{ key }}
       </b-navbar-item>
 
-      <b-navbar-item
-        v-for="(link, key) in social"
-        :key="key"
-        tag="a"
-        :href="link.url"
-      >
+      <b-navbar-item v-for="(link, key) in social" :key="key" tag="a" :href="link.url">
         <span>
           <font-awesome-icon :icon="link.icon" size="lg" />
         </span>

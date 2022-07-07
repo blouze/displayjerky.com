@@ -26,6 +26,7 @@ export default {
   &.has-background {
     position: relative;
     overflow: hidden;
+    margin-top: -3.25em;
   }
   &-background {
     position: absolute;

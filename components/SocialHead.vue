@@ -1,7 +1,5 @@
 <template>
-  <div>
-    lskdjflqskdjf
-  </div>
+  <div />
 </template>
 
 <script>

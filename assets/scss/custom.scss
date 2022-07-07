@@ -1,0 +1,28 @@
+@import 'vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css';
+
+.subscribe-container {
+  font-family: unset;
+  
+  form {
+  }
+ 
+  &__title {
+    color: dimgrey;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    }
+ 
+  &__subtitle {
+  }
+ 
+  &__email {
+  }
+ 
+  &__submit {
+    background-color: dimgrey;
+    &:hover {
+      background-color: black;
+    }
+  }
+}

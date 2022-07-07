@@ -12,7 +12,6 @@ import MailchimpModal from '@/components/MailchimpModal.vue'
 export default {
   name: 'IndexPage',
   components: { MailchimpModal },
-
   mounted () {
     // const plugin = document.createElement('script')
     // plugin.setAttribute('src', '/js/shader-web-background.min.js')

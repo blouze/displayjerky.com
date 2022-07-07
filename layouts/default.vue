@@ -27,9 +27,6 @@ export default {
   components: { NavBar, FooterSection, HeroFullheight },
   head () {
     return {
-      bodyAttrs: {
-        class: this.$route.name !== 'index' ? 'has-navbar-fixed-top' : ''
-      },
       titleTemplate: (title) => {
         return this.$route.name === 'index' ? `${title}` : `${title} - ${this.$route.name}`
       },

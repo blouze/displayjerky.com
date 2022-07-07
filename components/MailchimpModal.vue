@@ -13,7 +13,6 @@
 
 <script>
 import { VueMailchimpEmailSignupForm } from 'vue-mailchimp-email-signup-form'
-import 'vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css'
 
 export default {
   name: 'MailchimpModal',
@@ -33,27 +32,8 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .modal .modal-content {
   width: unset;
-}
-
-.subscribe-container {
-  font-family: unset;
-}
-
-.subscribe-container__title {
-  color: dimgrey;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.subscribe-container__submit {
-  background-color: dimgrey;
-}
-
-.subscribe-container__submit:hover {
-  background-color: black;
 }
 </style>
