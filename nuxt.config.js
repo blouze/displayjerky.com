@@ -2,7 +2,9 @@ import getRoutes from './utils/getRoutes'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  // ssr: false,
+  // Nope, enable it so meta tags are rendered in each page correctly
+  ssr: true,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',

@@ -3,12 +3,12 @@ export const createSEOMeta = data => [
   {
     hid: 'title',
     name: 'title',
-    content: data.title
+    content: data.title || 'DisplayJerky'
   },
   {
     hid: 'description',
     name: 'description',
-    content: data.description
+    content: data.description || 'DisplayJerky'
   },
 
   // OPEN GRAPH / FACEBOOK
@@ -25,12 +25,12 @@ export const createSEOMeta = data => [
   {
     hid: 'og:title',
     property: 'og:title',
-    content: data.title
+    content: data.title || 'DisplayJerky'
   },
   {
     hid: 'og:description',
     property: 'og:description',
-    content: data.description
+    content: data.description || 'DisplayJerky'
   },
   {
     hid: 'og:image',

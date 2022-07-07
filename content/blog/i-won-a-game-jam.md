@@ -1,6 +1,6 @@
 ---
-title: I won a game jam and told nobody about it.
-description: I don't know why I'm like this...
+title: How I won a game jam and told nobody about it.
+description: Why. Why am I like this.
 img: /img/blog/cat.jpeg
 ---
 
