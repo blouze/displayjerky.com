@@ -44,30 +44,30 @@
     <section class="section container is-max-desktop">
       <nuxt-content :document="article" />
     </section>
+
+    <social-head :meta="meta" />
   </article>
 </template>
 
 <script>
-import { createSEOMeta } from '@/utils/seo'
 import { formatDate } from '@/utils/date'
+import SocialHead from '@/components/SocialHead'
 
 export default {
+  components: { SocialHead },
   async asyncData ({ $content, params }) {
     const article = await $content('blog', params.slug).fetch()
     return { article }
   },
-  head () {
-    return {
-      titleTemplate: title => `${this.article.title} - ${title}`,
-      meta: [...createSEOMeta({
+  computed: {
+    meta () {
+      return {
         title: this.article.title,
         description: this.article.description,
         url: this.$route.path,
         image: this.article.img
-      })]
-    }
-  },
-  computed: {
+      }
+    },
     share () {
       return {
         network: 'twitter',
