@@ -1,18 +1,31 @@
 export const createSEOMeta = data => [
+  // PRIMARY
   {
-    hid: 'og:type',
-    property: 'og:type',
-    content: 'website'
-  },
-  {
-    hid: 'og:title',
-    property: 'og:title',
+    hid: 'title',
+    name: 'title',
     content: data.title
   },
   {
     hid: 'description',
     name: 'description',
     content: data.description
+  },
+
+  // OPEN GRAPH / FACEBOOK
+  {
+    hid: 'og:type',
+    property: 'og:type',
+    content: 'website'
+  },
+  {
+    hid: 'og:url',
+    property: 'og:url',
+    content: `${process.env.HOST_NAME}${data.url}`
+  },
+  {
+    hid: 'og:title',
+    property: 'og:title',
+    content: data.title
   },
   {
     hid: 'og:description',
@@ -24,9 +37,16 @@ export const createSEOMeta = data => [
     property: 'og:image',
     content: `${process.env.HOST_NAME}${data.image || '/logo.png'}`
   },
+
+  // TWITTER
   {
-    hid: 'og:url',
-    property: 'og:url',
+    hid: 'twitter:card',
+    property: 'twitter:card',
+    content: data.cardType || 'summary_large_image'
+  },
+  {
+    hid: 'twitter:url',
+    property: 'twitter:url',
     content: `${process.env.HOST_NAME}${data.url}`
   },
   {
@@ -48,10 +68,5 @@ export const createSEOMeta = data => [
     hid: 'twitter:image',
     property: 'twitter:image',
     content: `${process.env.HOST_NAME}${data.image || '/logo.png'}`
-  },
-  {
-    hid: 'twitter:card',
-    name: 'twitter:card',
-    content: data.cardType || 'summary_large_image'
   }
 ]
