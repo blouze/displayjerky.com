@@ -2,7 +2,7 @@
   <b-navbar fixed-top :type="type" :class="{ home: $route.name === 'index' }" wrapper-class="container is-max-desktop">
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        DisplayJerky
+        <b-image :src="logoSrc" />
       </b-navbar-item>
     </template>
 
@@ -15,8 +15,11 @@
         tag="router-link"
         :to="link.to"
         :class="{ 'is-active': $route.path === link.to }"
+        class="flip-animate"
       >
-        {{ key }}
+        <span :data-hover="key">
+          {{ key }}
+        </span>
       </b-navbar-item>
 
       <b-navbar-item v-for="(link, key) in social" :key="key" tag="a" :href="link.url">
@@ -37,6 +40,9 @@
 <script>
 export default {
   name: 'NavBar',
+  props: {
+    type: { type: String, default: 'is-dark' }
+  },
   data: () => ({
     social: process.env.social,
     links: {
@@ -46,8 +52,8 @@ export default {
     }
   }),
   computed: {
-    type () {
-      return this.$route.name === 'index' ? 'is-dark' : 'is-light'
+    logoSrc () {
+      return require(`@/assets/img/logo_${this.$route.path === '/' ? 'white' : 'white'}.png`)
     }
   }
 }
@@ -58,9 +64,9 @@ nav.navbar {
   &.home {
     background-color: transparent;
   }
-}
 
-.navbar-item {
-  font-weight: bold;
+  .navbar-item {
+    font-weight: bold;
+  }
 }
 </style>

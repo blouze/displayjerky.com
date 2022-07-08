@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar />
+    <nav-bar :type="navType" />
 
     <hero-fullheight v-if="$route.name === 'index'" />
 
@@ -32,6 +32,11 @@ export default {
       },
       meta: [...createSEOMeta({ url: this.$route.fullPath })],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
+  },
+  computed: {
+    navType () {
+      return this.$route.name === 'index' ? 'is-dark' : 'is-dark'
     }
   }
 }

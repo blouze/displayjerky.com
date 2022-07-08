@@ -92,7 +92,9 @@ export default {
   // https://google-fonts.nuxtjs.org/options
   googleFonts: {
     families: {
-      Archivo: true
+      Archivo: true,
+      'Press Start 2P': true,
+      'Source Sans Pro': true
     },
     display: 'swap'
   },

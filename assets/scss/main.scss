@@ -84,25 +84,28 @@ $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
 // Fonts
-$family-sans-serif: "Archivo";
+$family-sans-serif: "Source Sans Pro";
 $family-primary: $family-sans-serif;
-.nuxt-content h1 {
-    @extend .is-1 !optional;
-    @extend .title !optional;
+
+.title, .navbar-item {
+    font-family: "Archivo";
 }
 
-.nuxt-content h2 {
-@extend .is-2 !optional;
-@extend .title !optional;
-}
-
-.nuxt-content h3 {
-@extend .is-3 !optional;
-@extend .title !optional;
-}
-
-.nuxt-content p {
-margin-bottom: 1.6rem;
+.nuxt-content {
+    & h1 {
+        @extend .is-1 !optional;
+        @extend .title !optional;
+    }
+    
+    & h2 {
+        @extend .is-2 !optional;
+        @extend .title !optional;
+    }
+    
+    & h3 {
+        @extend .is-3 !optional;
+        @extend .title !optional;
+    }
 }
   
 // Import Bulma and Buefy styles

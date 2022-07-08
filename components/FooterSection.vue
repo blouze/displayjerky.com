@@ -2,17 +2,21 @@
   <footer class="footer section">
     <div class="container is-max-desktop">
       <div class="columns is-align-items-start">
-        <ul class="column level is-mobile">
-          <li v-for="(link, key) in links" :key="key" class="level-item has-text-centered">
-            <router-link
-              class="button is-text"
-              :class="{'is-active': $route.path === link.to}"
-              :to="link.to"
-            >
-              {{ key }}
-            </router-link>
-          </li>
-        </ul>
+        <nav class="column">
+          <ul class="level is-mobile">
+            <li v-for="(link, key) in links" :key="key" class="level-item has-text-centered">
+              <router-link
+                :class="{'is-active': $route.path === link.to}"
+                class="button heading is-medium flip-animate"
+                :to="link.to"
+              >
+                <span :data-hover="key">
+                  {{ key }}
+                </span>
+              </router-link>
+            </li>
+          </ul>
+        </nav>
 
         <div class="column columns">
           <div class="column has-text-centered">
@@ -55,5 +59,9 @@ ul.footer-nav {
       font-size: 2rem;
     } */
   }
+}
+
+.level-item {
+  font-weight: bold;
 }
 </style>

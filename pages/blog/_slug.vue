@@ -1,67 +1,21 @@
 <template>
   <article>
     <section class="section container is-max-desktop">
-      <div class="card">
-        <div class="card-image">
-          <b-image
-            :src="
-              article.img ? article.img : 'https://cataas.com/cat?filter=pixel'
-            "
-            :alt="article.alt"
-            ratio="4by3"
-            class="card"
-          >
-            <template #placeholder>
-              <b-skeleton class="skeleton-placeholder" height="100%" />
-            </template>
-          </b-image>
-        </div>
-        <div class="card-content">
-          <h1 class="title is-size-4-mobile is-size-2-tablet">
-            {{ article.title }}
-            <p
-              v-if="article.description"
-              class="subtitle is-size-6-mobile is-size-4-tablet"
-            >
-              {{ article.description }}
-            </p>
-          </h1>
+      <BreadCrumbs />
 
-          <div class="level is-mobile">
-            <div class="level-left">
-              <div class="level-item">
-                <p
-                  v-if="article.updatedAt"
-                  class="subtitle is-size-6-mobile is-size-4-tablet"
-                >
-                  {{ formatDate(article.updatedAt) }}
-                </p>
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">
-                <ShareNetwork v-bind="share" tag="b-button" class="is-light">
-                  <span>
-                    <font-awesome-icon :icon="['fab', 'twitter']" />
-                  </span>
-                  <span class="has-text-weight-bold">share</span>
-                </ShareNetwork>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <blog-card v-bind="article">
+        <share-button v-bind="share" />
+      </blog-card>
     </section>
 
     <section class="section container is-max-desktop">
-      <nuxt-content :document="article" />
+      <nuxt-content class="blog-article" :document="article" />
     </section>
   </article>
 </template>
 
 <script>
 import { createSEOMeta } from '@/utils/seo'
-import { formatDate } from '@/utils/date'
 
 export default {
   async asyncData ({ $content, params }) {
@@ -90,17 +44,32 @@ export default {
         description: this.article.description
       }
     }
-  },
-  methods: {
-    formatDate
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 ::v-deep .b-skeleton {
   height: 100%;
   position: absolute;
   top: 0;
 }
+
+.blog-article {
+    & > p {
+        &:first-of-type {
+            &:first-letter {
+                font-family: "CelibateMonk";
+                font-size : 8rem;
+                float: left;
+                margin: 0.1em -0.05em 0.1em 0;
+                line-height: 0.65;
+                padding: 0.1em;
+            }
+        }
+
+        margin-bottom: 1.6rem;
+    }
+  }
+
 </style>

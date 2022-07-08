@@ -1,19 +1,32 @@
 ---
-title: How I won a game jam and told nobody about it.
-description: Why. Why am I like this.
+title: I won a game jam and told nobody about it.
+description: Why am I like this.
 img: /img/blog/cat.jpeg
 ---
 
-I started fiddling again with a game engine a couple years ago, out of boredom (or was it confinement?). For a while, it felt pretty much like old William Munny shooting at empty bottles.
+A couple years ago, I started fiddling again with a game engine, out of boredom (or was it confinement?).
 
-Fortunately, it didn't last long. After a while, I had numerous projects started, all named "Demo" or "Test" followed by a two digits number. Still, I was yet to make a complete game.
+Just like old William Munny shooting at empty bottles, I slowly but surely regained my footing and pretty soon, I had created a decent number of projects, all named "Demo" or "Test" followed by a two digits number. 
 
-Following every indie game dev's advice online for anyone willing to get (back, in my case) in game development, I decided to join a game jam.
+Still, I was yet to make a complete game.
+
+<content-image src= "i-won-a-game-jam/unforgiven-coffee.gif" alt="Thirty year old developer enjoying coffee.">
+  "Hey, Bill. You still know how to code C#, right?"
+</content-image>
+
+Following the advice of virtually every indie game dev's online to anyone willing to get (back, in my case) into it, I decided to join what the cool kids call nowadays: a&nbsp;***game&nbsp;jam***.
+
 
 ### Finding a game jam
-Finding a game jam is not straightforward: there are hundreds to chose from, and each one is a community of its own. You need to ask yourself really hard what you expect from it.
+There are literally dozens to chose from.
 
-I needed a strong constraint to not go off rail.
+They vastly vary in duration, themes and number of participants.
+
+Visit [itch.io](https://itch.io/jams) and pick one that suits your taste.
+
+Finding the right one for you is not straightforward. Each one is a community of its own. First, you need to ask yourself what you expect from it.
+
+I chose one with predetermined assets. 
 
 I was OK with doing making a game alone.
 
