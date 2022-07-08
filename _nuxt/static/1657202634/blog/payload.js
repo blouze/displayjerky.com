@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog", {data:[{articles:[{slug:"i-won-a-game-jam",description:"Why. Why am I like this.",title:"How I won a game jam and told nobody about it.",img:"\u002Fimg\u002Fblog\u002Fcat.jpeg",updatedAt:"2022-07-07T14:02:42.043Z"}]}],fetch:{},mutations:void 0});
