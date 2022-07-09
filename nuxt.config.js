@@ -9,6 +9,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  server: {
+    host: '0'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'DisplayJerky',
@@ -17,6 +21,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
+      { name: 'theme-color', content: '#000000' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'title', name: 'title', content: 'DisplayJerky' },
       { hid: 'description', name: 'description', content: 'DisplayJerky' },
@@ -67,7 +72,9 @@ export default {
     // https://gitlab.com/broj42/nuxt-cookie-control
     ['nuxt-cookie-control'],
     // https://github.com/nicolasbeauvais/vue-social-sharing
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+    // https://v2.color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

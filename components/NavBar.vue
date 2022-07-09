@@ -4,9 +4,13 @@
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <b-image :src="logoSrc" />
       </b-navbar-item>
-    </template>
 
-    <template #start />
+      <b-navbar-item v-for="(link, key) in social" :key="key" tag="a" :href="link.url">
+        <span>
+          <font-awesome-icon :icon="link.icon" />
+        </span>
+      </b-navbar-item>
+    </template>
 
     <template #end>
       <b-navbar-item
@@ -19,12 +23,6 @@
       >
         <span :data-hover="key">
           {{ key }}
-        </span>
-      </b-navbar-item>
-
-      <b-navbar-item v-for="(link, key) in social" :key="key" tag="a" :href="link.url">
-        <span>
-          <font-awesome-icon :icon="link.icon" size="lg" />
         </span>
       </b-navbar-item>
     </template>

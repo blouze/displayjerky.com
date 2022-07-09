@@ -1,8 +1,6 @@
 <template>
   <article>
-    <section class="section container is-max-desktop">
-      <BreadCrumbs />
-
+    <section class="container is-max-desktop">
       <blog-card v-bind="article">
         <share-button v-bind="share" />
       </blog-card>
@@ -48,28 +46,21 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 ::v-deep .b-skeleton {
   height: 100%;
   position: absolute;
   top: 0;
 }
-
+/*
 .blog-article {
-    & > p {
-        &:first-of-type {
-            &:first-letter {
-                font-family: "CelibateMonk";
-                font-size : 8rem;
-                float: left;
-                margin: 0.1em -0.05em 0.1em 0;
-                line-height: 0.65;
-                padding: 0.1em;
-            }
+  & > p {
+    &:first-of-type {
+        &:first-letter {
+            font-family: "ChiKareGo2";
         }
-
-        margin-bottom: 1.6rem;
     }
   }
+} */
 
 </style>

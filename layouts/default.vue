@@ -24,6 +24,7 @@ import { createSEOMeta } from '@/utils/seo'
 
 export default {
   name: 'DefaultLayout',
+  colorMode: 'dark',
   components: { NavBar, FooterSection, HeroFullheight },
   head () {
     return {

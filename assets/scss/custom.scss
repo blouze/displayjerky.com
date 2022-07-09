@@ -4,6 +4,36 @@
   url(~assets/fonts/CelibateMonk.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Frikativ";
+  src: local("Frikativ"),
+  url(~assets/fonts/Frikativ.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "iso8";
+  src: local("iso8"),
+  url(~assets/fonts/iso8.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PixelTimesNewRoman";
+  src: local("PixelTimesNewRoman"),
+  url(~assets/fonts/PixelTimesNewRoman.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "TomAndJerry";
+  src: local("TomAndJerry"),
+  url(~assets/fonts/TomAndJerry.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ChiKareGo2";
+  src: local("ChiKareGo2"),
+  url(~assets/fonts/ChiKareGo2.ttf) format("truetype");
+}
+
 @import 'vue-mailchimp-email-signup-form/dist/vue-mailchimp-email-signup-form.css';
 
 .subscribe-container {
@@ -67,5 +97,35 @@
   &:hover span:before,
   &:focus span:before {
     text-decoration: underline;
+  }
+}
+
+
+.blog-article {
+  & > p {
+      &:first-of-type {
+          &:first-letter {
+              font-family: "ChiKareGo2";
+              font-weight: bold;
+              font-size : 12rem;
+              float: left;
+              margin: -0.06em -0.1em -0.05em 0;
+              line-height: 0.65;
+              padding: 0.1em 0.1em 0 0;
+          }
+      }
+
+      margin-bottom: 1.6rem;
+  }
+  .icon.icon-link {
+    /* background-image: url('~assets/svg/icon-hashtag.svg'); */
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+  }
+
+  h1, h2, h3 {
+    margin-top: 1rem;
   }
 }

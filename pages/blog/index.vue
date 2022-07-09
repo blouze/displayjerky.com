@@ -4,39 +4,60 @@
       Blog
     </h1>
 
-    <ul class="columns is-multiline">
-      <li v-for="article of articles" :key="article.slug" class="column is-half card">
-        <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <div class="card-image">
-            <b-image :src="article.img ? article.img : 'https://cataas.com/cat?filter=pixel'" :alt="article.alt" ratio="4by3">
-              <template #placeholder>
-                <b-skeleton
-                  class="skeleton-placeholder"
-                  height="100%"
-                />
-              </template>
-            </b-image>
-          </div>
+    <ul class="columns is-multiline mt-6">
+      <li v-for="article of articles" :key="article.slug" class="column is-three-quarters columns">
+        <div class="column is-one-quarter">
+          <b-image
+            :src="article.img ? article.img : 'https://cataas.com/cat?filter=pixel'"
+            :alt="article.alt"
+            ratio="4by3"
+          >
+            <template #placeholder>
+              <b-skeleton
+                class="skeleton-placeholder"
+                height="100%"
+              />
+            </template>
+          </b-image>
+        </div>
 
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">
-                  {{ article.title }}
-                </p>
-                <p class="subtitle is-5">
-                  {{ article.description }}
-                </p>
-              </div>
+        <div class="column">
+          <p class="title is-4 mb-0">
+            <router-link
+              :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+            >
+              {{ article.title }}
+            </router-link>
+          </p>
+
+          <time datetime="2016-1-1" class="header">
+            {{ formatDate(article.updatedAt) }}
+          </time>
+
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <p class="subtitle is-5">
+                {{ article.description }}
+              </p>
             </div>
 
-            <div class="content">
-              <time datetime="2016-1-1">
-                {{ formatDate(article.updatedAt) }}
-              </time>
+            <div class="level-right">
+              <router-link
+                :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+                class="button is-outlined is-dark is-expanded"
+              >
+                <span>
+                  <!-- <font-awesome-icon :icon="['fab', 'twitter']" /> -->
+                </span>
+                <span class="has-text-weight-bold flip-animate">
+                  <span data-hover="Read">
+                    Read
+                  </span>
+                </span>
+              </router-link>
             </div>
-          </div>
-        </nuxt-link>
+          </nav>
+        </div>
       </li>
     </ul>
   </section>

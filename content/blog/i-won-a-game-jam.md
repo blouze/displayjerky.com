@@ -6,25 +6,28 @@ img: /img/blog/cat.jpeg
 
 A couple years ago, I started fiddling again with a game engine, out of boredom (or was it confinement?).
 
-Just like old William Munny shooting at empty bottles, I slowly but surely regained my footing and pretty soon, I had created a decent number of projects, all named "Demo" or "Test" followed by a two digits number. 
+Just like old William Munny shooting at empty bottles, I slowly but surely regained my footing and pretty soon, I had created a decent number of projects, all named "Demo" or "Test" followed by a two digits number. Still, I was yet to make a finished game.
 
-Still, I was yet to make a complete game.
 
 <content-image src= "i-won-a-game-jam/unforgiven-coffee.gif" alt="Thirty year old developer enjoying coffee.">
   "Hey, Bill. You still know how to code C#, right?"
 </content-image>
 
-Following the advice of virtually every indie game dev's online to anyone willing to get (back, in my case) into it, I decided to join what the cool kids call nowadays: a&nbsp;***game&nbsp;jam***.
+Following the advice of virtually every indie game dev online to anyone willing to get (back, in my case) into it, I decided to join what the cool kids call these days: a&nbsp;***game&nbsp;jam***.
+
 
 
 ### Finding a game jam
-There are literally dozens to chose from.
+
+It's not straightforward.
+
+Take a look on [itch.io](https://itch.io/jams), i noticed dozens to chose from.
+Each one is a community of its own. First, you need to ask yourself what you expect from it.
 
 They vastly vary in duration, themes and number of participants.
 
-Visit [itch.io](https://itch.io/jams) and pick one that suits your taste.
+ and pick one that suits your taste.
 
-Finding the right one for you is not straightforward. Each one is a community of its own. First, you need to ask yourself what you expect from it.
 
 I chose one with predetermined assets. 
 
