@@ -1,5 +1,5 @@
 <template>
-  <ShareNetwork v-bind="$props" tag="b-button" class="is-light">
+  <ShareNetwork v-bind="$props" tag="b-button" class="is-link is-outlined is-small is-fullwidth">
     <span>
       <font-awesome-icon :icon="['fab', 'twitter']" />
     </span>

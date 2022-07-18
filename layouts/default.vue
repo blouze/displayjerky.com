@@ -6,7 +6,9 @@
 
     <div :class="{ main: $route.name !== 'index' }">
       <div class="main-content">
-        <Nuxt />
+        <div class="container is-max-desktop">
+          <Nuxt />
+        </div>
       </div>
     </div>
 

@@ -1,24 +1,32 @@
 <template>
-  <article>
-    <section class="container is-max-desktop">
-      <blog-card v-bind="article">
-        <share-button v-bind="share" />
-      </blog-card>
-    </section>
+  <div class="column is-three-quarters is-align-self-center">
+    <blog-card v-bind="article" class="mb-6">
+      <share-button v-bind="share" />
+    </blog-card>
 
-    <section class="section container is-max-desktop">
-      <nuxt-content class="blog-article" :document="article" />
+    <section class="section container">
+      <nuxt-content class="blog-article" :document="article" tag="article" />
+
+      <div class="level mt-6">
+        <div class="level-left" />
+        <div class="level-right">
+          <div class="level-item">
+            <share-button v-bind="share" />
+          </div>
+        </div>
+      </div>
     </section>
-  </article>
+  </div>
 </template>
 
 <script>
 import { createSEOMeta } from '@/utils/seo'
 
 export default {
+  scrollToTop: true,
   async asyncData ({ $content, params }) {
     const article = await $content('blog', params.slug).fetch()
-    return { article }
+    return { article: { ...article, title: article.title.replace(/ ([^ ]*)$/, '\xA0$1') } } // .replace(/ ([^ ]*)$/, '\xA0$1')
   },
   head () {
     return {
@@ -52,15 +60,4 @@ export default {
   position: absolute;
   top: 0;
 }
-/*
-.blog-article {
-  & > p {
-    &:first-of-type {
-        &:first-letter {
-            font-family: "ChiKareGo2";
-        }
-    }
-  }
-} */
-
 </style>

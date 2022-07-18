@@ -62,9 +62,5 @@ nav.navbar {
   &.home {
     background-color: transparent;
   }
-
-  .navbar-item {
-    font-weight: bold;
-  }
 }
 </style>

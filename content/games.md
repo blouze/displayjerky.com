@@ -1,5 +1,5 @@
 ---
 title: Games
-description: 'Games made by DisplayJerky'
+description: 'Games by DisplayJerky'
 ---
 

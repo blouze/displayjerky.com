@@ -3,14 +3,19 @@
     <img src="https://cataas.com/cat?filter=pixel" alt="CAT" class="hero-background is-transparent">
 
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <section class="section container is-max-desktop">
         <p class="title">
-          We make games!
+          We make video
+          <router-link :to="{ path: '/games'}" class="flip-animate">
+            <span data-hover="games">
+              games
+            </span>
+          </router-link>
         </p>
         <p class="subtitle">
-          That's what we do.
+          There are cats in the background for some reason.
         </p>
-      </div>
+      </section>
     </div>
   </div>
 </template>

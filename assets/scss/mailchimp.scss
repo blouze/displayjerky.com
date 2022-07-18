@@ -1,0 +1,31 @@
+.subscribe-container {
+  all: initial;
+  
+  form {
+  }
+ 
+  &__title {
+    @extend .title !optional;
+    display: block;
+    text-align: center;
+  }
+ 
+  &__subtitle {
+    @extend .subtitle !optional;
+    text-align: center;
+  }
+ 
+  &__email {
+    &::placeholder {
+      @extend .heading !optional;
+    }
+  }
+ 
+  &__submit {
+    @extend .flip-animate !optional;
+    background-color: dimgrey;
+    &:hover {
+      background-color: black;
+    }
+  }
+}

@@ -38,7 +38,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/main.scss',
-    '@/assets/scss/custom.scss'
+    '@/assets/scss/buefy.scss',
+    '@/assets/scss/fonts.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -51,6 +52,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
     // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
     // https://github.com/nuxt-community/fontawesome-module
@@ -96,12 +99,19 @@ export default {
     }
   },
 
+  styleResources: {
+    scss: [
+      '@/assets/scss/mailchimp.scss',
+      '@/assets/scss/animation.scss',
+      '@/assets/scss/custom.scss'
+    ]
+  },
+
   // https://google-fonts.nuxtjs.org/options
   googleFonts: {
     families: {
-      Archivo: true,
-      'Press Start 2P': true,
-      'Source Sans Pro': true
+      'Patua One': true,
+      Mukta: true
     },
     display: 'swap'
   },

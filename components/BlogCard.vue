@@ -14,20 +14,20 @@
     </div>
 
     <div class="card-content">
-      <h1 class="title is-size-4-mobile is-size-2-tablet">
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h1 class="title is-size-4-mobile is-size-3-tablet">
         {{ title }}
-        <p v-if="description" class="subtitle is-size-6-mobile is-size-4-tablet">
-          {{ description }}
-        </p>
       </h1>
 
-      <div class="level is-mobile">
+      <p v-if="description" class="subtitle">
+        {{ description }}
+      </p>
+
+      <div class="level is-mobile is-align-items-end">
         <div class="level-left">
-          <div class="level-item">
-            <p v-if="updatedAt" class="subtitle is-size-6-mobile is-size-4-tablet">
-              {{ formatDate(updatedAt) }}
-            </p>
-          </div>
+          <time v-if="updatedAt" datetime="2016-1-1" class="heading">
+            {{ formatDate(updatedAt) }}
+          </time>
         </div>
 
         <div class="level-right">

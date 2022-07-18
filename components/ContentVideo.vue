@@ -1,6 +1,13 @@
 <template>
-  <div class="mx-4 my-6">
-    <b-image :src="imgSrc" :alt="alt" class="mb-3" />
+  <div>
+    <video
+      width="100%"
+      autoplay
+      loop
+      muted
+    >
+      <source :src="src" :type="type">
+    </video>
     <p class="heading has-text-centered">
       <slot />
     </p>
@@ -9,20 +16,15 @@
 
 <script>
 export default {
-  name: 'ContentImage',
+  name: 'ContentVideo',
   props: {
     src: {
       type: String,
       required: true
     },
-    alt: {
+    type: {
       type: String,
-      required: true
-    }
-  },
-  computed: {
-    imgSrc () {
-      return require(`~/assets/img/blog/${this.src}`)
+      default: 'video/mp4'
     }
   }
 }

@@ -1,13 +1,13 @@
 <template>
-  <footer class="footer section">
+  <footer class="footer">
     <div class="container is-max-desktop">
-      <div class="columns is-align-items-start">
-        <nav class="column">
+      <div class="columns is-align-items-end">
+        <div class="column">
           <ul class="level is-mobile">
             <li v-for="(link, key) in links" :key="key" class="level-item has-text-centered">
               <router-link
                 :class="{'is-active': $route.path === link.to}"
-                class="button heading is-medium flip-animate"
+                class="button is-medium heading flip-animate"
                 :to="link.to"
               >
                 <span :data-hover="key">
@@ -16,19 +16,23 @@
               </router-link>
             </li>
           </ul>
-        </nav>
+        </div>
 
-        <div class="column columns">
-          <div class="column has-text-centered">
+        <div class="column">
+          <div class="has-text-centered">
             <h4 class="title is-4">
               Follow us!
             </h4>
 
-            <div class="column is-align-self-center">
+            <div class="is-align-self-center">
               <social-buttons />
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="column heading has-text-centered">
+        Copyright © {{ currentYear }} DisplayJerky
       </div>
     </div>
   </footer>
@@ -36,6 +40,8 @@
 
 <script>
 import SocialButtons from './footer/SocialButtons.vue'
+import { currentYear } from '@/utils/date'
+
 export default {
   name: 'FooterSection',
   components: { SocialButtons },
@@ -45,7 +51,10 @@ export default {
       blog: { to: '/blog' },
       about: { to: '/about' }
     }
-  })
+  }),
+  computed: {
+    currentYear
+  }
 }
 </script>
 
