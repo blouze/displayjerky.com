@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/games", (function(a){return {data:[{page:{slug:"games",description:"Games by DisplayJerky",title:"Games",toc:[],body:{type:"root",children:[]},dir:"\u002F",path:"\u002Fgames",extension:".md",createdAt:a,updatedAt:a}}],fetch:{},mutations:void 0}}("2022-07-18T19:13:49.757Z")));
