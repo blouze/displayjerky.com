@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /tsu-chi-tsu/
-Sitemap: https://displayjerky.com/sitemap.xml
+Disallow: /
