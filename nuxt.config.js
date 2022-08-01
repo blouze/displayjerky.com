@@ -15,7 +15,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'DisplayJerky',
+    title: 'Display Jerky',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,8 +23,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'theme-color', content: '#000000' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'title', name: 'title', content: 'DisplayJerky' },
-      { hid: 'description', name: 'description', content: 'DisplayJerky' },
+      { hid: 'title', name: 'title', content: 'Display Jerky' },
+      { hid: 'description', name: 'description', content: 'Display Jerky. Video games studio and audiovisual treats.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     bodyAttrs: {
@@ -185,8 +185,7 @@ export default {
 
   robots: {
     UserAgent: '*',
-    Disallow: '/tsu-chi-tsu/',
-    Sitemap: 'https://displayjerky.com/sitemap.xml'
+    Disallow: '/'
   },
 
   env: {
